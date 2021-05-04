@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div style="margin-left: 150px;">
+    <h1 style="margin-top: 150px;">Search</h1>
+    <form method="GET">
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+{% if results %}
+{% for result in results %}
+<p><a href="{{ result.get_absolute_url }}">{{ result.name }}</a></p>
+{{ result.price }}
+{% endfor %}
+{% endif %}
+{% endblock content %}

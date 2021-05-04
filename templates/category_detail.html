@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block content %}
+<div style="margin-top: 150px;" xmlns="http://www.w3.org/1999/html">
+    <h1>{{ category }}</h1>
+    {% for product in products %}
+    <h2><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h2>
+    <p> {{ product.price }}</p>
+
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
